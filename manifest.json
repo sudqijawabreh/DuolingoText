@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "dulingo",
+  "description": "",
+  "version": "1.27.2",
+"content_security_policy": "script-src 'self' https://connect.facebook.net; object-src 'self'",
+  "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [
+       {
+           "matches": ["https://www.duolingo.com/*"],
+           "js": ["jquery.js","devices.js"]
+       }
+
+   ],
+  "browser_action": {
+      "default_title": "click to open curricula page"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus",
+     "http://*/*", "https://*/*",
+     "storage",
+     "alarms",
+     "notifications"
+  ]
+
+}
